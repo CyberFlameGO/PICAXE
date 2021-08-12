@@ -2,12 +2,12 @@ Symbol green = B.7
 Symbol red = B.6
 symbol yellow = B.5
 Symbol interval = w0
-let interval = 500
+let interval = 2000
 enablebod
-
+setfreq m32
 main:
 	do
-		;debug
+		debug
 		;readinternaltemp IT_RAW_L,0,w1
 		high green
 		low red
