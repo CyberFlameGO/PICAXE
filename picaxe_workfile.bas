@@ -9,6 +9,7 @@ main:
 	do
 		debug
 		;readinternaltemp IT_RAW_L,0,w1
+		tune C.0, 0,($00)
 		high green
 		low red
 		low yellow
