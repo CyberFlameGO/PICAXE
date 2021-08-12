@@ -1,22 +1,24 @@
 Symbol green = B.7
-Symbol interval=w0
-let interval= 2000
+Symbol red = B.6
+symbol yellow = B.5
+Symbol interval= w0
+let interval = 1250
 enablebod
+
 main:
-	readinternaltemp IT_RAW_L,0,w1
 	debug
-	'high green
-	'low B.6
-	'low B.5
-	'pause interval
-	'low green
-	'high B.6
-	'low B.5
-	'pause interval
-	'low green
-	'low B.6
-	'high B.5
-	'pause interval
-	'let interval = interval -5
-	'debug
+	readinternaltemp IT_RAW_L,0,w1
+	high green
+	low red
+	low yellow
+	pause interval
+	low green
+	high red
+	low yellow
+	pause interval
+	low green
+	low red
+	high yellow
+	pause interval
+	let interval = interval - 5
 	goto main
