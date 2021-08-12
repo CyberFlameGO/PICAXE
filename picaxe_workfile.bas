@@ -2,7 +2,7 @@ Symbol green = B.7
 Symbol red = B.6
 symbol yellow = B.5
 Symbol interval = w0
-let interval = 2000
+let interval = 1000
 enablebod
 setfreq m32
 main:
