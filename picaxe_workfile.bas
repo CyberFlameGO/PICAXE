@@ -1,12 +1,12 @@
-Symbol bin1 = B.7
-Symbol bin2 = B.6
-symbol bin4 = B.5
+Symbol gbin1 = B.7
+Symbol rbin2 = B.6
+symbol ybin4 = B.5
 Symbol interval = w0
 Symbol rng = w1
 Symbol diceout = b4
-let interval = 2000
+let interval = 500
 enablebod
-setfreq m32
+;setfreq m32
 main:
 	do
 		debug
@@ -14,17 +14,17 @@ main:
 		;tune C.0, 0,($00)
 		random rng
 		let diceout = rng // 6 + 1
-		high bin1
-		low bin2
-		low bin4
+		high gbin1
+		low rbin2
+		low ybin4
 		pause interval
-		low bin1
-		high bin2
-		low bin4
+		low gbin1
+		high rbin2
+		low ybin4
 		pause interval
-		low bin1
-		low bin2
-		high bin4
+		low gbin1
+		low rbin2
+		high ybin4
 		pause interval
 		if interval > 150 then
 			let interval = interval - 5
@@ -35,8 +35,8 @@ main:
 			let interval = interval - 2
 		endif
 	loop while interval > 0
-	low bin1
-	low bin2
-	low bin4
+	low gbin1
+	low rbin2
+	low ybin4
 	let interval = 250
 	goto main
