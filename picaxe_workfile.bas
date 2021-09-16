@@ -4,7 +4,7 @@ symbol ybin4 = B.5
 Symbol interval = w0
 Symbol rng = w1
 Symbol diceout = b4
-let interval = 5000
+let interval = 10000
 enablebod
 setfreq m32
 main:
@@ -13,32 +13,7 @@ main:
 		;readinternaltemp IT_RAW_L,0,w1
 		random rng
 		let diceout = rng // 7 + 1
-		if diceout = 1 then 
-			high gbin1
-		endif
-		if diceout = 2 then
-			high rbin2
-		endif
-		if diceout = 3 then
-			high rbin2
-			high gbin1
-		endif
-		if diceout = 4 then
-			high ybin4
-		endif
-		if diceout = 5 then
-			high ybin4
-			high gbin1
-		endif
-		if diceout = 6 then
-			high ybin4
-			high rbin2
-		endif
-		if diceout = 7 then
-			high ybin4
-			high rbin2
-			high gbin1
-		endif
+		gosub diceout_checker
 		tune C.0, 0,($00)
 		pause interval
 		low gbin1
@@ -50,3 +25,28 @@ main:
 	low ybin4
 	let interval = 250
 	goto main
+	
+diceout_checker:
+	select case b4
+		case 1
+			high gbin1
+		case 2
+			high rbin2
+		case 3
+			high rbin2
+			high gbin1
+		case 4
+			high ybin4
+		case 5
+			high ybin4
+			high gbin1
+		case 6
+			high ybin4
+			high rbin2
+		case 7
+			high ybin4
+			high rbin2
+			high gbin1
+		endselect
+	return
+		
