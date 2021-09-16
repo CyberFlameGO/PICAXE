@@ -11,7 +11,6 @@ main:
 	do
 		debug
 		;readinternaltemp IT_RAW_L,0,w1
-		;tune C.0, 0,($00)
 		random rng
 		let diceout = rng // 7 + 1
 		if diceout = 1 then 
@@ -40,6 +39,7 @@ main:
 			high rbin2
 			high gbin1
 		endif
+		tune C.0, 0,($00)
 		pause interval
 		low gbin1
 		low rbin2
