@@ -1,10 +1,11 @@
 #picaxe 20m2
+#revision 1
+
 Symbol gbin1 = B.7
 Symbol rbin2 = B.6
 symbol ybin4 = B.5
 Symbol interval = w0
-;Symbol rand = w1
-;Symbol diceout = b4
+
 let interval = 10000
 enablebod
 setfreq m32
