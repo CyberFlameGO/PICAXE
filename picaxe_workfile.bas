@@ -9,6 +9,7 @@ let interval = 10000
 enablebod
 setfreq m32
 
+#region "Dice generator macro"
 ;We use the macro directive in place of a function
 #macro dice_gen( rand_w_var, mod_val, dice_var ) 
 	Symbol rand_var = rand_w_var
@@ -16,7 +17,9 @@ setfreq m32
 	Symbol dice_out = dice_var
 	let dice_out = rand_w_var // mod_val
 #endmacro
+#endregion
 
+#region "Main routine"
 main:
 	do
 		debug
@@ -33,7 +36,9 @@ main:
 	low ybin4
 	let interval = 250
 	goto main
+#endregion
 
+#region "Checker subroutine"
 diceout_checker:
 	select case dice_out
 		case 0
@@ -57,4 +62,5 @@ diceout_checker:
 			high gbin1
 		endselect
 	return
+#endregion
 		
