@@ -1,5 +1,6 @@
+#include "rand_logic.basinc"
+
 #picaxe 20m2
-#revision 1
 
 Symbol gbin1 = B.7
 Symbol rbin2 = B.6
@@ -9,16 +10,6 @@ Symbol interval = w0
 let interval = 10000
 enablebod
 setfreq m32
-
-#region "Dice generator macro"
-;We use the macro directive in place of a function
-#macro dice_gen( rand_w_var, mod_val, dice_var ) 
-	Symbol rand_var = rand_w_var
-	random rand_var
-	Symbol dice_out = dice_var
-	let dice_out = rand_w_var // mod_val
-#endmacro
-#endregion
 
 #region "Main routine"
 main:
