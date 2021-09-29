@@ -16,7 +16,7 @@ setfreq m32
 main:
 	do
 		debug
-		dice_gen(w1, 7, b4)
+		dice_gen(w1, 6, b4)
 		gosub diceout_checker
 		;tune C.0, 0,($00)
 		pause interval
