@@ -9,6 +9,7 @@ Symbol interval = w0
 
 let interval = 10000
 enablebod
+fvrsetup FVR4096
 setfreq m32
 
 #region "Main routine"
