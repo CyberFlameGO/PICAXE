@@ -1,4 +1,4 @@
-#include "rand_logic.basinc"
+#include "./PICAXE_BASIC_libs/rand_logic.basinc"
 
 #picaxe 20m2
 
