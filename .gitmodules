@@ -1,3 +1,4 @@
 [submodule "PICAXE_BASIC_libs"]
 	path = PICAXE_BASIC_libs
-	url = https://github.com/CyberFlameGO/PICAXE_BASIC_libs
+	url = https://github.com/CyberFlameGO/PICAXE_BASIC_libs.git
+	branch = main
