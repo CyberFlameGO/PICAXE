@@ -5,8 +5,12 @@
 
 Symbol gbin1 = B.7
 Symbol rbin2 = B.6
-symbol ybin4 = B.5
+Symbol ybin4 = B.5
 Symbol interval = w0
+Symbol button1 = pinB.4
+b9 = 0
+
+pullup %0000000000010000
 
 let interval = 10000
 ; https://picaxe.com/basic-commands/advanced-picaxe-configuration/enablebod/
@@ -22,9 +26,9 @@ main:
 	do
 		dice_gen(w1, 7, b4)
 		debug
-		gosub diceout_checker
+		;gosub diceout_checker
 		;tune C.0, 0,($00)
-		pause interval
+		;pause interval
 		low gbin1
 		low rbin2
 		low ybin4
@@ -64,4 +68,3 @@ diceout_checker:
 		endselect
 	return
 #endregion
-		
