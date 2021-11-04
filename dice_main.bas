@@ -40,7 +40,6 @@ main:
 		; 'dice_in' is a symbol for b4, which is the variable where 
 		`the processed number goes.
 		dice_gen(w1, 7, dice_in)
-		debug
 		; Go to the 'checker' subroutine, which is the logic for which LEDs 
 		`get lit.
 		gosub diceout_checker
