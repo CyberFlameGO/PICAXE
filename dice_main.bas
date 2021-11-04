@@ -7,10 +7,11 @@ Symbol gbin1 = B.7
 Symbol rbin2 = B.6
 Symbol ybin4 = B.5
 Symbol interval = w0
-Symbol button1 = pinB.4
-b9 = 0
+let interval = 250
+Symbol push_button = ;pinC.3
+Symbol dice_in = b4
 
-pullup %0000000000010000
+pullup ;%0001000000000000
 
 let interval = 10000
 ; https://picaxe.com/basic-commands/advanced-picaxe-configuration/enablebod/
@@ -23,26 +24,22 @@ setfreq m32
 
 #region "Main routine"
 main:
-	do
-		dice_gen(w1, 7, b4)
+	if push_button = 1 then
+		dice_gen(w1, 7, dice_in)
 		debug
-		;gosub diceout_checker
-		;tune C.0, 0,($00)
-		;pause interval
+		gosub diceout_checker
+		tune C.0, 0,($00)
+		pause interval
 		low gbin1
 		low rbin2
 		low ybin4
-	loop while interval > 0
-	low gbin1
-	low rbin2
-	low ybin4
-	let interval = 250
+	endif
 	goto main
 #endregion
 
 #region "Checker subroutine"
 diceout_checker:
-	select case dice_out
+	select case dice_in
 		
 		case 0
 			high gbin1
