@@ -71,7 +71,7 @@ diceout_checker:
 			high rbin2
 			high gbin1
 		else
-			tune c.0, 0,($00,$00,$00,$a0)
+			tune C.0, 0,($00,$00,$00,$a0)
 		endselect
 	return
 #endregion
